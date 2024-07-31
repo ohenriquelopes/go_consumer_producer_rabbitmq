@@ -1,0 +1,68 @@
+{
+  "bindings": [
+    {
+      "vhost": "local",
+      "source": "input",
+      "destination": "sales_order",
+      "destination_type": "exchange",
+      "routing_key": "*.sales_order",
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "arguments": {},
+      "auto_delete": false,
+      "durable": true,
+      "internal": false,
+      "name": "input",
+      "type": "topic",
+      "vhost": "local"
+    }
+  ],
+  "global_parameters": [
+    {
+      "name": "rabbit_local",
+      "value": "rabbit@local"
+    },
+    {
+      "name": "cluster_name",
+      "value": "rabbit@rabbitmq"
+    }
+  ],
+  "parameters": [],
+  "permissions": [
+    {
+      "configure": ".*",
+      "read": ".*",
+      "user": "guest",
+      "vhost": "/",
+      "write": ".*"
+    },
+    {
+      "configure": ".*",
+      "read": ".*",
+      "user": "guest",
+      "vhost": "local",
+      "write": ".*"
+    }
+  ],
+  "policies": [],
+  "queues": [
+    {
+      "arguments": {},
+      "auto_delete": false,
+      "durable": true,
+      "name": "queue",
+      "vhost": "local"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "local"
+    },
+    {
+      "name": "/"
+    }
+  ]
+}
